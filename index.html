@@ -30,6 +30,21 @@
         .niche-card h3 { font-size: 18px; margin-bottom: 10px; color: #0a2e3d; }
         .niche-card p { font-size: 15px; color: #555; }
 
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+        .review-card { background: #f8f9fa; border-radius: 12px; padding: 28px; border-top: 4px solid #2ecc71; transition: box-shadow 0.2s; }
+        .review-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .review-card .card-badge { display: inline-block; background: #e8f8f0; color: #27ae60; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+        .review-card .card-editors { display: inline-block; background: #fef9e7; color: #f39c12; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-bottom: 12px; margin-left: 4px; }
+        .review-card h3 { font-size: 18px; margin-bottom: 8px; color: #0a2e3d; }
+        .review-card .tagline { font-size: 14px; color: #777; margin-bottom: 10px; }
+        .review-card .stars { font-size: 18px; color: #f39c12; margin-bottom: 14px; }
+        .review-card .stars .empty { color: #ddd; }
+        .review-card .card-links { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .review-card .read-review { color: #1a5276; text-decoration: none; font-weight: 600; font-size: 15px; }
+        .review-card .read-review:hover { text-decoration: underline; }
+        .review-card .check-price { display: inline-block; background: #2ecc71; color: #0a2e3d; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; transition: background 0.2s; }
+        .review-card .check-price:hover { background: #27ae60; }
+
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
         .about-item h3 { font-size: 18px; margin-bottom: 8px; color: #0a2e3d; }
         .about-item p { font-size: 15px; color: #555; }
@@ -41,12 +56,14 @@
         .footer { background: #0a2e3d; color: #aaa; padding: 40px 20px; text-align: center; font-size: 14px; }
         .footer a { color: #2ecc71; text-decoration: none; }
 
-        .privacy-content { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        .privacy-content h1 { font-size: 32px; margin-bottom: 10px; color: #0a2e3d; }
-        .privacy-content h2 { font-size: 22px; margin-top: 30px; margin-bottom: 10px; color: #0a2e3d; }
-        .privacy-content p { font-size: 16px; margin-bottom: 16px; color: #555; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #1a5276; text-decoration: none; }
-        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .header-inner { flex-direction: column; gap: 12px; }
+            nav a { margin-left: 15px; margin-right: 15px; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 17px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .review-card .card-links { flex-direction: column; align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -55,7 +72,8 @@
             <a href="https://sweetglider.online" class="logo">Sweet<span>Glider</span></a>
             <nav>
                 <a href="https://sweetglider.online">Home</a>
-                <a href="https://sweetglider.online/privacy.html">Privacy Policy</a>
+                <a href="https://sweetglider.online#reviews">Reviews</a>
+                <a href="https://sweetglider.online/privacy.html">Privacy</a>
                 <a href="https://sweetglider.online#contact">Contact</a>
             </nav>
         </div>
@@ -72,11 +90,11 @@
         <p>Our team researches and reviews products in five key categories. Every review is based on actual research, not hype.</p>
         <div class="niche-grid">
             <div class="niche-card">
-                <h3>E-Business & Marketing</h3>
+                <h3>E-Business &amp; Marketing</h3>
                 <p>Affiliate marketing courses, online business tools, and income-building programs reviewed honestly with real pros and cons.</p>
             </div>
             <div class="niche-card">
-                <h3>Health & Wellness</h3>
+                <h3>Health &amp; Wellness</h3>
                 <p>Supplements, fitness programs, and wellness products evaluated with evidence-based analysis and genuine user feedback.</p>
             </div>
             <div class="niche-card">
@@ -84,12 +102,72 @@
                 <p>Personal development programs, brain training tools, and mindset resources — reviewed with healthy skepticism and honest opinions.</p>
             </div>
             <div class="niche-card">
-                <h3>Software & Tools</h3>
+                <h3>Software &amp; Tools</h3>
                 <p>Productivity software, AI tools, and marketing platforms tested and reviewed. We only recommend what actually works.</p>
             </div>
             <div class="niche-card">
-                <h3>Education & Learning</h3>
+                <h3>Education &amp; Learning</h3>
                 <p>Online courses, training programs, and educational resources. We tell you what's worth your time and money.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="reviews">
+        <h2>Featured <span>Reviews</span></h2>
+        <p>Our latest in-depth product reviews — honest, research-based, and always with pros &amp; cons.</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <span class="card-badge">Health &amp; Wellness</span>
+                <span class="card-editors">&#11088; Editor's Pick</span>
+                <h3>Mitolyn</h3>
+                <p class="tagline">A mitochondrial supplement targeting the root cause of weight gain — not just the symptoms.</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;<span class="empty">&#9733;</span></div>
+                <div class="card-links">
+                    <a href="https://sweetglider.online/reviews/mitolyn.html" class="read-review">Read Review &rarr;</a>
+                    <a href="https://hop.clickbank.net/?affiliate=dedzeldece&vendor=mitolyn" class="check-price" rel="nofollow noopener">Check Price</a>
+                </div>
+            </div>
+            <div class="review-card">
+                <span class="card-badge">E-Business</span>
+                <h3>ClickBank Spark</h3>
+                <p class="tagline">The official ClickBank training platform — learn affiliate marketing from the marketplace itself.</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#189;<span class="empty">&#9733;&#9733;</span></div>
+                <div class="card-links">
+                    <a href="https://sweetglider.online/reviews/clickbank-spark.html" class="read-review">Read Review &rarr;</a>
+                    <a href="https://hop.clickbank.net/?affiliate=dedzeldece&vendor=cbspark" class="check-price" rel="nofollow noopener">Check Price</a>
+                </div>
+            </div>
+            <div class="review-card">
+                <span class="card-badge">Self-Improvement</span>
+                <h3>The Genius Switch</h3>
+                <p class="tagline">A brainwave entrainment and manifestation program promising to unlock your hidden cognitive potential.</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#189;<span class="empty">&#9733;&#9733;</span></div>
+                <div class="card-links">
+                    <a href="https://sweetglider.online/reviews/the-genius-switch.html" class="read-review">Read Review &rarr;</a>
+                    <a href="https://hop.clickbank.net/?affiliate=dedzeldece&vendor=geniusbr" class="check-price" rel="nofollow noopener">Check Price</a>
+                </div>
+            </div>
+            <div class="review-card">
+                <span class="card-badge">Software &amp; Tools</span>
+                <span class="card-editors">&#11088; Editor's Pick</span>
+                <h3>VIN Checkup</h3>
+                <p class="tagline">Affordable, instant vehicle history reports — the smart buyer's secret weapon for used cars.</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;<span class="empty">&#9733;</span></div>
+                <div class="card-links">
+                    <a href="https://sweetglider.online/reviews/vin-checkup.html" class="read-review">Read Review &rarr;</a>
+                    <a href="https://hop.clickbank.net/?affiliate=dedzeldece&vendor=VINCHECKUP" class="check-price" rel="nofollow noopener">Check Price</a>
+                </div>
+            </div>
+            <div class="review-card">
+                <span class="card-badge">Education</span>
+                <span class="card-editors">&#11088; Editor's Pick</span>
+                <h3>Rocket Languages</h3>
+                <p class="tagline">Conversation-first language learning with one-time pricing and lifetime access — no subscription needed.</p>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;<span class="empty">&#9733;</span></div>
+                <div class="card-links">
+                    <a href="https://sweetglider.online/reviews/rocket-languages.html" class="read-review">Read Review &rarr;</a>
+                    <a href="https://hop.clickbank.net/?affiliate=dedzeldece&vendor=rocketlang" class="check-price" rel="nofollow noopener">Check Price</a>
+                </div>
             </div>
         </div>
     </div>
